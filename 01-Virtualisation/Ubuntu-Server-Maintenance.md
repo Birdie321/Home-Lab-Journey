@@ -1,4 +1,4 @@
-# Ubuntu Server Maintenance and Troubleshooting
+# Day 2: Ubuntu Server Maintenance and Troubleshooting
 
 **Date:** 23 November 2026  
 **Project:** Home Lab Journey  
