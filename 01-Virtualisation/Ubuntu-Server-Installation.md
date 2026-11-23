@@ -1,9 +1,9 @@
-# Ubuntu Server Installation Using VirtualBox
+# Day 1: Ubuntu Server Installation Using VirtualBox
 
 **Date:** 22 November 2026  
 **Project:** Home Lab Journey  
 **Phase:** 1 - Virtualisation  
-**Status:** Installation completed, system updates pending
+**Status:** Installation completed, system updates completed on Day 2
 
 ## 1. Objective
 
