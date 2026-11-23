@@ -4,16 +4,15 @@
 **Project:** Home Lab Journey  
 **Phase:** 1 - Virtualisation  
 **Status:** Installation completed, system updates completed on Day 2
-
 ## 1. Objective
 
 The objective of this project was to create my first virtual Linux server using Oracle VirtualBox.
 
 This project is part of my long-term goal of transitioning from a virtual home lab to dedicated physical infrastructure while developing practical skills in networking, Linux administration, virtualisation and cloud computing.
 
-## 2. Hardware and Software
+## 2. Environment
 
-### Physical Computer
+### 2.1 Physical Computer (Host)
 
 | Component | Specification |
 |---|---|
@@ -25,7 +24,7 @@ This project is part of my long-term goal of transitioning from a virtual home l
 | Operating System | Windows 11 |
 | Virtualisation | Enabled |
 
-### Virtual Machine
+### 2.2 Virtual Machine (Guest)
 
 | Component | Configuration |
 |---|---|
@@ -39,7 +38,7 @@ This project is part of my long-term goal of transitioning from a virtual home l
 | IPv4 Address | 10.0.2.15 |
 | SSH | OpenSSH Server installed |
 
-## 3. Installation Process
+## 3. Tasks Performed
 
 I completed the following tasks:
 
@@ -58,9 +57,9 @@ I completed the following tasks:
 13. Successfully logged into Ubuntu.
 14. Created a VirtualBox snapshot named Fresh-Ubuntu-Installation.
 
-## 4. Problems Encountered
+## 4. Troubleshooting
 
-### Problem 1: Ubuntu Installer Freezing
+### 4.1 Ubuntu Installer Appeared to Freeze
 
 During the initial boot, Ubuntu appeared to stop progressing at:
 
@@ -70,7 +69,7 @@ I attempted to pause and resume the virtual machine.
 
 The installer eventually progressed to the language selection screen.
 
-### Problem 2: CPU Soft Lockups
+### 4.2 CPU Soft Lockup Warnings
 
 During the installation's security update stage, Ubuntu displayed warnings similar to:
 
@@ -82,7 +81,7 @@ After restarting, Ubuntu successfully booted from the virtual hard disk and allo
 
 This suggests a possible virtual CPU scheduling or compatibility issue, although the precise cause has not been confirmed.
 
-### Problem 3: Installation ISO Booting Again
+### 4.3 Installation ISO Booted Again
 
 After restarting the virtual machine, the Ubuntu installer appeared again.
 
@@ -90,11 +89,29 @@ I learned that the virtual machine was still booting from its installation ISO.
 
 After the ISO was disconnected, the virtual machine successfully started from its installed operating system.
 
-## 5. Linux Commands Learned
+## 5. Verification and Results
+
+The checks below record the status at the end of **Day 1 (22 November 2026)**. Items marked pending were not yet completed during this session.
+
+- [x] VirtualBox installed
+- [x] Ubuntu Server installed
+- [x] Virtual networking configured
+- [x] SSH Server installed
+- [x] Linux administrator account created
+- [x] Successful login
+- [x] Linux commands executed successfully
+- [x] Initial recovery snapshot created
+- [ ] System updates installed
+- [ ] SSH connection tested
+- [ ] Network connectivity verified from the terminal
+
+**Follow-up:** Package updates were completed and verified on Day 2, 23 November 2026.
+
+## 6. Commands Learned
 
 I executed three commands to verify my Linux installation.
 
-### Check Current User
+### 6.1 Check Current User
 
 ```bash
 whoami
@@ -106,7 +123,7 @@ Output:
 labadmin
 ```
 
-### Check Hostname
+### 6.2 Check Hostname
 
 ```bash
 hostname
@@ -118,7 +135,7 @@ Output:
 ubuntu-server-01
 ```
 
-### Check Ubuntu Version
+### 6.3 Check Ubuntu Version
 
 ```bash
 cat /etc/os-release
@@ -126,7 +143,7 @@ cat /etc/os-release
 
 Result: Ubuntu 26.04.1 LTS.
 
-## 6. Concepts Learned
+## 7. Challenges and Lessons Learned
 
 **Virtualisation:** Running virtual computers using the resources of a physical computer.
 
@@ -146,21 +163,23 @@ Result: Ubuntu 26.04.1 LTS.
 
 **Snapshots:** Save a virtual machine's state so changes can be reversed.
 
-## 7. Verification Results
+### Reflection
 
-- [x] VirtualBox installed
-- [x] Ubuntu Server installed
-- [x] Virtual networking configured
-- [x] SSH Server installed
-- [x] Linux administrator account created
-- [x] Successful login
-- [x] Linux commands executed successfully
-- [x] Initial recovery snapshot created
-- [ ] System updates installed
-- [ ] SSH connection tested
-- [ ] Network connectivity verified from the terminal
+Today I created and successfully accessed my first virtual Linux server.
 
-## 8. Next Steps
+I learned how virtual machines use physical computer resources and how to configure an operating system, virtual storage and networking.
+
+The installation encountered several problems, especially CPU soft lockups. Troubleshooting these problems helped me understand the importance of checking logs, changing one configuration at a time and documenting the results.
+
+This was my first practical milestone towards building a physical home lab.
+
+## 8. Outcome
+
+Successfully installed Ubuntu Server 26.04.1 LTS in VirtualBox, configured NAT networking and LVM storage, created the `labadmin` account, installed OpenSSH Server, and logged into the VM.
+
+Created the `Fresh-Ubuntu-Installation` snapshot as a recovery point. The installer and boot issues were documented, and package upgrades remained a task for Day 2.
+
+## 9. Next Steps
 
 During my next home lab session, I plan to:
 
@@ -170,13 +189,3 @@ During my next home lab session, I plan to:
 4. Verify server stability.
 5. Test network connectivity.
 6. Begin learning Linux file management and administrative commands.
-
-## 9. Reflection
-
-Today I created and successfully accessed my first virtual Linux server.
-
-I learned how virtual machines use physical computer resources and how to configure an operating system, virtual storage and networking.
-
-The installation encountered several problems, especially CPU soft lockups. Troubleshooting these problems helped me understand the importance of checking logs, changing one configuration at a time and documenting the results.
-
-This was my first practical milestone towards building a physical home lab.
