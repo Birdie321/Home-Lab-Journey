@@ -2,8 +2,9 @@
 
 **Date:** 22 November 2026  
 **Project:** Home Lab Journey  
-**Phase:** 1 - Virtualisation  
-**Status:** Installation completed, system updates completed on Day 2
+**Phase:** Virtualisation  
+**Status:** Completed
+
 ## 1. Objective
 
 The objective of this project was to create my first virtual Linux server using Oracle VirtualBox.
@@ -12,68 +13,70 @@ This project is part of my long-term goal of transitioning from a virtual home l
 
 ## 2. Environment
 
-### 2.1 Physical Computer (Host)
+### Physical Computer (Host)
 
 | Component | Specification |
 |---|---|
 | Processor | AMD Ryzen 7 9800X3D |
 | CPU Cores | 8 |
-| Logical Processors | 16 |
-| RAM | 32GB |
+| CPU Threads | 16 |
+| RAM | 32 GB |
 | Storage | 2 NVMe SSDs |
 | Operating System | Windows 11 |
 | Virtualisation | Enabled |
 
-### 2.2 Virtual Machine (Guest)
+### Virtual Machine (Guest)
 
-| Component | Configuration |
+| Component | Specification |
 |---|---|
 | Virtualisation Software | Oracle VirtualBox 7.2.22 |
 | Virtual Machine Name | Ubuntu-Server-01 |
 | Guest Operating System | Ubuntu Server 26.04.1 LTS |
-| Allocated RAM | 4096MB |
+| Allocated RAM | 4096 MB |
 | Virtual CPUs | Initially 2, changed to 1 |
-| Virtual Hard Disk | 40GB |
+| Virtual Hard Disk | 40 GB |
 | Network Adapter | NAT |
 | IPv4 Address | 10.0.2.15 |
 | SSH | OpenSSH Server installed |
 
 ## 3. Tasks Performed
 
-I completed the following tasks:
-
-1. Installed Oracle VirtualBox on Windows 11.
-2. Downloaded the Ubuntu Server 26.04.1 LTS ISO.
-3. Created a virtual machine named Ubuntu-Server-01.
-4. Allocated virtual CPU, memory and disk resources.
-5. Booted the virtual machine using the Ubuntu ISO.
-6. Configured networking using DHCP and NAT.
-7. Selected the default Australian Ubuntu package mirror.
-8. Configured storage using LVM.
-9. Created a Linux administrator account.
-10. Installed OpenSSH Server.
-11. Completed the Ubuntu Server installation.
-12. Removed the installation ISO and booted from the virtual hard disk.
-13. Successfully logged into Ubuntu.
-14. Created a VirtualBox snapshot named Fresh-Ubuntu-Installation.
+- Installed Oracle VirtualBox on Windows 11.
+- Downloaded the Ubuntu Server 26.04.1 LTS ISO.
+- Created a virtual machine named Ubuntu-Server-01.
+- Allocated virtual CPU, memory and disk resources.
+- Booted the virtual machine using the Ubuntu ISO.
+- Configured networking using DHCP and NAT.
+- Selected the default Australian Ubuntu package mirror.
+- Configured storage using LVM.
+- Created a Linux administrator account.
+- Installed OpenSSH Server.
+- Completed the Ubuntu Server installation.
+- Removed the installation ISO and booted from the virtual hard disk.
+- Successfully logged into Ubuntu.
+- Created a VirtualBox snapshot named Fresh-Ubuntu-Installation.
 
 ## 4. Troubleshooting
 
-### 4.1 Ubuntu Installer Appeared to Freeze
+### Issue 1: Ubuntu Installer Appeared to Freeze
 
 During the initial boot, Ubuntu appeared to stop progressing at:
 
 `Loading essential drivers...`
 
+### Resolution
+
 I attempted to pause and resume the virtual machine.
 
 The installer eventually progressed to the language selection screen.
 
-### 4.2 CPU Soft Lockup Warnings
+### Issue 2: CPU Soft Lockup Warnings
 
 During the installation's security update stage, Ubuntu displayed warnings similar to:
 
 `watchdog: BUG: soft lockup - CPU#0 stuck for 24s!`
+
+### Resolution
 
 I changed the virtual CPU allocation from two processors to one.
 
@@ -81,9 +84,11 @@ After restarting, Ubuntu successfully booted from the virtual hard disk and allo
 
 This suggests a possible virtual CPU scheduling or compatibility issue, although the precise cause has not been confirmed.
 
-### 4.3 Installation ISO Booted Again
+### Issue 3: Installation ISO Booted Again
 
 After restarting the virtual machine, the Ubuntu installer appeared again.
+
+### Resolution
 
 I learned that the virtual machine was still booting from its installation ISO.
 
@@ -93,55 +98,31 @@ After the ISO was disconnected, the virtual machine successfully started from it
 
 The checks below record the status at the end of **Day 1 (22 November 2026)**. Items marked pending were not yet completed during this session.
 
-- [x] VirtualBox installed
-- [x] Ubuntu Server installed
-- [x] Virtual networking configured
-- [x] SSH Server installed
-- [x] Linux administrator account created
-- [x] Successful login
-- [x] Linux commands executed successfully
-- [x] Initial recovery snapshot created
-- [ ] System updates installed
-- [ ] SSH connection tested
-- [ ] Network connectivity verified from the terminal
+| Verification | Result |
+|---|---|
+| VirtualBox installed | Successful |
+| Ubuntu Server installed | Successful |
+| Virtual networking configured | Successful |
+| SSH Server installed | Successful |
+| Linux administrator account created | Successful |
+| Successful login | Successful |
+| Linux commands executed successfully | Successful |
+| Initial recovery snapshot created | Successful |
+| System updates installed | Pending |
+| SSH connection tested | Pending |
+| Network connectivity verified from the terminal | Pending |
 
 **Follow-up:** Package updates were completed and verified on Day 2, 23 November 2026.
 
 ## 6. Commands Learned
 
-I executed three commands to verify my Linux installation.
+| Command | Purpose |
+|---|---|
+| `whoami` | Display the current user |
+| `hostname` | Display the hostname |
+| `cat /etc/os-release` | Display operating system version information |
 
-### 6.1 Check Current User
-
-```bash
-whoami
-```
-
-Output:
-
-```text
-labadmin
-```
-
-### 6.2 Check Hostname
-
-```bash
-hostname
-```
-
-Output:
-
-```text
-ubuntu-server-01
-```
-
-### 6.3 Check Ubuntu Version
-
-```bash
-cat /etc/os-release
-```
-
-Result: Ubuntu 26.04.1 LTS.
+**Verified output:** Current user `labadmin`; hostname `ubuntu-server-01`; Ubuntu 26.04.1 LTS.
 
 ## 7. Challenges and Lessons Learned
 
@@ -181,11 +162,11 @@ Created the `Fresh-Ubuntu-Installation` snapshot as a recovery point. The instal
 
 ## 9. Next Steps
 
-During my next home lab session, I plan to:
+*Planned at the end of this session.*
 
-1. Start Ubuntu Server.
-2. Refresh package information using `sudo apt update`.
-3. Install available system and security updates.
-4. Verify server stability.
-5. Test network connectivity.
-6. Begin learning Linux file management and administrative commands.
+- [ ] Start Ubuntu Server.
+- [ ] Refresh package information using `sudo apt update`.
+- [ ] Install available system and security updates.
+- [ ] Verify server stability.
+- [ ] Test network connectivity.
+- [ ] Begin learning Linux file management and administrative commands.
