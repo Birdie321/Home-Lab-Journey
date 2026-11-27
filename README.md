@@ -49,14 +49,29 @@ The current project focuses on deploying a self-hosted family media server using
 | Firmware | UEFI |
 | Secure Boot | Enabled |
 
+### Networking Equipment
+
+| Component | Specification |
+|---|---|
+| Network Switch | TP-Link TL-SG105 |
+| Switch Type | Unmanaged |
+| Ethernet Ports | 5 |
+| Port Speed | 10/100/1000 Mbps |
+| Network Adapter | TP-Link UE300C |
+| Adapter Interface | USB-C to Gigabit Ethernet |
+| Network Cabling | Cat6 Ethernet |
+| Negotiated Link Speed | 1 Gbps |
+| IPv4 Address Assignment | DHCP |
+| Remote Administration | OpenSSH |
+
 ## Project Roadmap
 
 - [x] Phase 1: Virtual Home Lab
 - [x] Phase 2: Physical Server Installation
-- [ ] Phase 3: Networking Infrastructure
-- [ ] Phase 4: Remote Server Administration
-- [ ] Phase 5: Security Hardening
-- [ ] Phase 6: Headless Server Configuration
+- [x] Phase 3: Networking Infrastructure
+- [x] Phase 4: Local Remote Server Administration
+- [x] Phase 5: Initial Security Hardening
+- [x] Phase 6: Headless Server Configuration
 - [ ] Phase 7: Self-Hosted Media Server
 - [ ] Phase 8: Secure Remote Access with Tailscale
 - [ ] Phase 9: Python Automation
@@ -68,43 +83,32 @@ The current project focuses on deploying a self-hosted family media server using
 
 | Session | Documentation | Status |
 |---|---|---|
-| Day 1 | [Ubuntu Server Installation](01-Virtualisation/Ubuntu-Server-Installation.md) | Completed |
-| Day 2 | [Ubuntu Server Maintenance](01-Virtualisation/Ubuntu-Server-Maintenance.md) | Completed |
+| Day 1 | [Ubuntu Server Installation](01-Virtualisation/Day-001-Ubuntu-Server-Installation.md) | Completed |
+| Day 2 | [Ubuntu Server Maintenance](01-Virtualisation/Day-002-Ubuntu-Server-Maintenance.md) | Completed |
 
 ### 02 - Physical Server Deployment
 
 | Session | Documentation | Status |
 |---|---|---|
-| Day 3 | [Physical Server Installation and Troubleshooting](02-Physical-Server-Deployment/Physical-Server-Installation.md) | Completed |
+| Day 3 | [Physical Server Installation and Troubleshooting](02-Physical-Server-Deployment/Day-003-Physical-Server-Installation.md) | Completed |
 
-## Progress Log
+### 03 - Network Configuration
 
-### 22 November 2026 - Day 1
+| Session | Documentation | Status |
+|---|---|---|
+| Day 4 | [Network Configuration and Server Hardening](03-Network-Configuration/Day-004-Network-Configuration-and-Server-Hardening.md) | Completed |
 
-- Assessed existing computer hardware.
-- Confirmed hardware virtualisation support.
-- Installed Oracle VirtualBox 7.2.22.
-- Created the GitHub repository.
-- Installed Ubuntu Server in a virtual machine.
+## Milestones Achieved
 
-### 23 November 2026 - Day 2
-
-- Continued developing Linux administration skills.
-- Performed Ubuntu Server maintenance exercises.
-- Updated project documentation.
-
-### 25 November 2026 - Day 3
-
-- Diagnosed SQUASHFS and input/output errors.
-- Verified Ubuntu Server ISO integrity using SHA256.
-- Created replacement bootable installation media.
-- Installed Ubuntu Server on physical hardware.
-- Configured SSD partitions.
-- Installed OpenSSH Server.
-- Resolved a UEFI bootloader registration issue.
-- Retained Secure Boot.
-- Verified successful authentication and automatic boot.
-- Documented troubleshooting with photographic evidence.
+| Milestone | Date Completed |
+|---|---|
+| Virtual Ubuntu Server deployment | 22 November 2026 |
+| Linux system maintenance | 23 November 2026 |
+| Physical Ubuntu Server deployment | 25 November 2026 |
+| Gigabit Ethernet connectivity | 27 November 2026 |
+| Local SSH remote administration | 27 November 2026 |
+| Initial server security hardening | 27 November 2026 |
+| Headless server configuration | 27 November 2026 |
 
 ## Technical Skills Developed
 
@@ -116,14 +120,30 @@ The current project focuses on deploying a self-hosted family media server using
 | File Integrity | SHA256 checksum verification |
 | Firmware Configuration | BIOS and UEFI configuration |
 | Bootloader Management | Manual EFI bootloader registration |
-| Technical Troubleshooting | Kernel log analysis and fault diagnosis |
+| Computer Networking | Ethernet, IPv4 and IPv6 |
+| Network Configuration | Netplan, DHCP and routing |
+| Network Diagnostics | Connectivity and DNS testing |
+| Remote Administration | OpenSSH and Windows PowerShell |
+| Firewall Management | UFW configuration |
+| Authentication | ED25519 SSH keys |
+| Security Hardening | Restricting SSH authentication methods |
+| Service Management | systemd and journalctl |
+| System Monitoring | Memory, storage and service health checks |
+| Technical Troubleshooting | Kernel logs and configuration conflict diagnosis |
 | Version Control | GitHub documentation and commit history |
 
 ## Current Milestone
 
-Physical Ubuntu Server installation completed successfully.
+Successfully established a networked, headless Ubuntu Server with gigabit Ethernet connectivity, firewall protection and secure local SSH administration.
 
-The next milestone is establishing Ethernet connectivity and secure remote administration through SSH.
+### Upcoming Tasks
+
+- [ ] Configure DHCP reservation.
+- [ ] Review available firmware updates.
+- [ ] Install and configure Jellyfin.
+- [ ] Configure media storage and libraries.
+- [ ] Implement secure remote access using Tailscale.
+- [ ] Establish backup procedures.
 
 ## Learning Approach
 
