@@ -1,7 +1,7 @@
-
 # Day 3: Physical Server Installation and Troubleshooting
 
 **Date:** 25 November 2026  
+**Project:** Home Lab Journey  
 **Phase:** Physical Server Deployment  
 **Status:** Completed
 
@@ -17,13 +17,13 @@ Develop practical skills in Linux installation, hardware troubleshooting, storag
 |---|---|
 | Laptop | Acer Aspire S5-371T |
 | Processor | Intel Core i7-6500U |
-| Memory | 8GB RAM |
-| Storage | Samsung 512GB SSD |
+| Memory | 8 GB RAM |
+| Storage | Samsung 512 GB SSD |
 | Operating System | Ubuntu Server 24.04.5 LTS |
 | Hostname | media-server |
 | Firmware | UEFI |
 | Secure Boot | Enabled |
-| Installation Media | Verbatim 8GB USB |
+| Installation Media | Verbatim 8 GB USB |
 | Installation Tool | Rufus 4.16 |
 | Network Configuration | Offline |
 
@@ -55,7 +55,7 @@ Kernel logs revealed SQUASHFS and input/output errors, indicating difficulties r
 ### Resolution
 
 - Verified the replacement Ubuntu Server ISO using SHA256.
-- Replaced the original USB with a Verbatim 8GB USB.
+- Replaced the original USB with a Verbatim 8 GB USB.
 - Selected DD Image mode in Rufus.
 - Used Ubuntu Server 24.04.5 LTS.
 - Repeated the installation process.
@@ -165,6 +165,8 @@ Resolved installation media errors and a UEFI bootloader registration issue with
 The physical server now boots independently without installation media and provides the foundation for the family media server project.
 
 ## 9. Next Steps
+
+*Planned at the end of this session.*
 
 - [ ] Connect and configure Ethernet.
 - [ ] Identify the server's IP address.
