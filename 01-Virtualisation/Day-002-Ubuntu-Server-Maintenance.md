@@ -2,8 +2,9 @@
 
 **Date:** 23 November 2026  
 **Project:** Home Lab Journey  
-**Phase:** 1 - Virtualisation  
+**Phase:** Virtualisation  
 **Status:** Completed
+
 ## 1. Objective
 
 The objective of this session was to learn Linux server maintenance, troubleshoot software repository errors, and successfully update my Ubuntu Server virtual machine.
@@ -12,7 +13,7 @@ This forms part of my long-term goal of building a physical, self-hosted family 
 
 ## 2. Environment
 
-| Component | Configuration |
+| Component | Specification |
 |---|---|
 | Virtualisation Software | Oracle VirtualBox 7.2.22 |
 | Operating System | Ubuntu Server 26.04.1 LTS |
@@ -24,7 +25,7 @@ This forms part of my long-term goal of building a physical, self-hosted family 
 
 ## 3. Tasks Performed
 
-### 3.1 Check for Package Updates
+### Check for Package Updates
 
 I began by checking for available software updates using:
 
@@ -40,7 +41,7 @@ However, the update failed because Ubuntu was still referencing the installation
 
 This prevented the package update process from completing successfully.
 
-### 3.2 Install Available Upgrades
+### Install Available Upgrades
 
 After resolving the repository error, I upgraded the installed packages.
 
@@ -54,7 +55,7 @@ The terminal displayed package configuration messages, service restart informati
 
 The command completed and returned to the terminal prompt.
 
-### 3.3 Restart Ubuntu Server
+### Restart Ubuntu Server
 
 Following the upgrade, I restarted the virtual machine using:
 
@@ -66,7 +67,7 @@ I logged back into the server using my existing administrator account.
 
 After restarting, the system reported Linux kernel version `7.0.0-44-generic`.
 
-### 3.4 Verify Package Updates
+### Verify Package Updates
 
 I performed one final package update check.
 
@@ -80,7 +81,7 @@ I performed one final package update check.
 
 This confirmed the package lists refreshed successfully and no additional package upgrades were available.
 
-### 3.5 Inspect System Information and Performance
+### Inspect System Information and Performance
 
 Checked the operating system and kernel:
 
@@ -97,7 +98,7 @@ top
 
 Exited `top` using **Q**.
 
-### 3.6 Examine Disk Space and LVM
+### Examine Disk Space and LVM
 
 ```bash
 df -h
@@ -107,7 +108,7 @@ sudo vgs
 
 The virtual disk was **40 GB**, the root logical volume **19 GB**, and the `ubuntu-vg` volume group reported **19 GB free**. No storage changes were made.
 
-### 3.7 Practise Linux File and Directory Management
+### Practise Linux File and Directory Management
 
 Found the working directory and inspected hidden files:
 
@@ -160,7 +161,7 @@ Final directory structure:
         └── notes-original.txt
 ```
 
-### 3.8 Inspect and Change File Permissions
+### Inspect and Change File Permissions
 
 Inspected the file metadata:
 
@@ -181,7 +182,13 @@ The reported permissions changed to `-rw-------`.
 
 ## 4. Troubleshooting
 
-### 4.1 Identify the CD-ROM Repository
+### Issue 1: CD-ROM Repository Error
+
+Ubuntu APT attempted to retrieve package information from the installation CD-ROM.
+
+### Resolution
+
+#### Identify the CD-ROM Repository
 
 I searched the Ubuntu APT configuration directory for references to the installation CD-ROM.
 
@@ -195,7 +202,7 @@ I searched the Ubuntu APT configuration directory for references to the installa
 
 The command identified the configuration file responsible for the error.
 
-### 4.2 Disable the CD-ROM Repository
+#### Disable the CD-ROM Repository
 
 I moved the problematic repository configuration file to a backup location.
 
@@ -205,7 +212,7 @@ I moved the problematic repository configuration file to a backup location.
 
 This preserved the original configuration while removing the CD-ROM repository from the active APT sources directory.
 
-### 4.3 Verify the Fix
+#### Verify the Fix
 
 I ran the package update command again.
 
@@ -219,17 +226,19 @@ I ran the package update command again.
 
 The repository issue was successfully resolved.
 
-### 4.4 Command Entry and VirtualBox Window Size
+### Issue 2: Command Entry and VirtualBox Window Size
 
 During the troubleshooting exercise, incorrect spacing in a `mv` command produced an error. The terminal prompt was also partially hidden because the VirtualBox window was not wide enough.
+
+### Resolution
 
 After expanding the window and correcting the command, file operations worked as expected.
 
 ## 5. Verification and Results
 
-### 5.1 Package Maintenance
+### Package Maintenance
 
-| Check | Verified result |
+| Verification | Result |
 |---|---|
 | APT CD-ROM repository error | Resolved |
 | Available upgrades after repository fix | 50 |
@@ -238,9 +247,9 @@ After expanding the window and correcting the command, file operations worked as
 | Linux kernel after reboot | `7.0.0-44-generic` |
 | Final `sudo apt update` | `All packages are up to date.` |
 
-### 5.2 Operating System and Resource Monitoring
+### Operating System and Resource Monitoring
 
-| Measurement | Observed result |
+| Verification | Result |
 |---|---|
 | Operating system | Ubuntu Server 26.04.1 LTS |
 | Hostname | `ubuntu-server-01` |
@@ -256,9 +265,9 @@ After expanding the window and correcting the command, file operations worked as
 
 Resource figures were measured during the session and can change over time.
 
-### 5.3 Filesystem and LVM Storage
+### Filesystem and LVM Storage
 
-| Measurement | Observed result |
+| Verification | Result |
 |---|---|
 | Virtual disk (`sda`) | 40 GB |
 | Boot partition (`sda2`) | 2 GB |
@@ -270,15 +279,17 @@ Resource figures were measured during the session and can change over time.
 | Volume group (`ubuntu-vg`) | About 38 GB |
 | Free capacity in volume group | 19 GB |
 
-### 5.4 File Management and Permissions
+### File Management and Permissions
 
-- [x] Created and entered `~/homelab-projects`.
-- [x] Created `notes.txt` and wrote two lines of text.
-- [x] Verified `>` overwrites content while `>>` appends.
-- [x] Copied, renamed and moved a backup into `backups/`.
-- [x] Confirmed original file contents remained in `notes.txt`.
-- [x] Inspected file ownership and permissions using `stat`.
-- [x] Changed `notes.txt` permissions from `0664` to `0600`.
+| Verification | Result |
+|---|---|
+| Created and entered `~/homelab-projects`. | Successful |
+| Created `notes.txt` and wrote two lines of text. | Successful |
+| Verified `>` overwrites content while `>>` appends. | Successful |
+| Copied, renamed and moved a backup into `backups/`. | Successful |
+| Confirmed original file contents remained in `notes.txt`. | Successful |
+| Inspected file ownership and permissions using `stat`. | Successful |
+| Changed `notes.txt` permissions from `0664` to `0600`. | Successful |
 
 ## 6. Commands Learned
 
@@ -318,17 +329,14 @@ I learned how to investigate the error message, identify the relevant configurat
 
 I also gained experience using the Linux terminal and learned how command syntax and spaces affect command execution.
 
-**Key lessons:**
-
 - Repository configuration errors can prevent software updates.
 - Linux commands require accurate syntax.
 - Configuration files can be backed up before making changes.
 - System upgrades should be followed by verification.
 - Terminal output helps identify and troubleshoot problems.
-
 - I learned to inspect a Linux server with `hostnamectl`, `free -h`, `top`, `df -h`, `lsblk` and `vgs`.
 - The 40 GB virtual disk and 19 GB root logical volume have different sizes because LVM manages allocation.
-- I practised organizing directories, backing up files and using `>` versus `>>`.
+- I practised organising directories, backing up files and using `>` versus `>>`.
 - I learned how permissions such as `0664` and `0600` control file access.
 
 ## 8. Outcome
@@ -341,11 +349,13 @@ Also completed the first Linux administration exercises: inspected system resour
 
 ## 9. Next Steps
 
-1. Inspect Linux network interfaces and learn IP addressing.
-2. Confirm OpenSSH is running.
-3. Configure VirtualBox NAT port forwarding for SSH.
-4. Connect to Ubuntu Server from Windows PowerShell.
-5. Continue practising Linux administration and begin Python monitoring automation.
-6. Test configurations in VirtualBox before installing Ubuntu Server fresh on the Acer laptop.
+*Planned at the end of this session.*
+
+- [ ] Inspect Linux network interfaces and learn IP addressing.
+- [ ] Confirm OpenSSH is running.
+- [ ] Configure VirtualBox NAT port forwarding for SSH.
+- [ ] Connect to Ubuntu Server from Windows PowerShell.
+- [ ] Continue practising Linux administration and begin Python monitoring automation.
+- [ ] Test configurations in VirtualBox before installing Ubuntu Server fresh on the Acer laptop.
 
 **Documentation workflow:** Record verified results throughout the session and update GitHub at the end.
