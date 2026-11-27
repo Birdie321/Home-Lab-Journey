@@ -1,6 +1,7 @@
 # Day 4: Network Configuration and Server Hardening
 
 **Date:** 27 November 2026  
+**Project:** Home Lab Journey  
 **Phase:** Network Configuration and Security  
 **Status:** Completed
 
@@ -16,8 +17,8 @@ Develop practical skills in Linux networking, DHCP, SSH authentication, firewall
 |---|---|
 | Laptop | Acer Aspire S5-371T |
 | Processor | Intel Core i7-6500U |
-| Memory | 8GB RAM |
-| Storage | Samsung 512GB SSD |
+| Memory | 8 GB RAM |
+| Storage | Samsung 512 GB SSD |
 | Operating System | Ubuntu Server 24.04.5 LTS |
 | Hostname | media-server |
 | Network Switch | TP-Link TL-SG105 |
@@ -276,7 +277,7 @@ Ethernet connectivity and SSH access remained operational following the system r
 | Subnet Mask | 255.255.255.0 |
 | DHCP Start Address | 192.168.0.2 |
 | DHCP End Address | 192.168.0.254 |
-| DHCP Lease Time | 1 Hour |
+| DHCP Lease Time | 1 hour |
 | Reserved IPv4 Address | 192.168.0.13 |
 | Server Hostname | media-server |
 | Ethernet Interface | UP |
