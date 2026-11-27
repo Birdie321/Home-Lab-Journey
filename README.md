@@ -29,7 +29,7 @@ The current project focuses on deploying a self-hosted family media server using
 | Processor | AMD Ryzen 7 9800X3D |
 | CPU Cores | 8 |
 | CPU Threads | 16 |
-| RAM | 32GB |
+| RAM | 32 GB |
 | Storage | 2 NVMe SSDs |
 | Host OS | Windows 11 |
 | Virtualisation | Enabled |
@@ -42,8 +42,8 @@ The current project focuses on deploying a self-hosted family media server using
 | Processor | Intel Core i7-6500U |
 | CPU Cores | 2 |
 | CPU Threads | 4 |
-| RAM | 8GB |
-| Storage | Samsung 512GB SSD |
+| RAM | 8 GB |
+| Storage | Samsung 512 GB SSD |
 | Operating System | Ubuntu Server 24.04.5 LTS |
 | Hostname | media-server |
 | Firmware | UEFI |
@@ -61,7 +61,7 @@ The current project focuses on deploying a self-hosted family media server using
 | Adapter Interface | USB-C to Gigabit Ethernet |
 | Network Cabling | Cat6 Ethernet |
 | Negotiated Link Speed | 1 Gbps |
-| IPv4 Address Assignment | DHCP |
+| IPv4 Address Assignment | DHCP with reservation |
 | Remote Administration | OpenSSH |
 
 ## Project Roadmap
@@ -109,6 +109,7 @@ The current project focuses on deploying a self-hosted family media server using
 | Local SSH remote administration | 27 November 2026 |
 | Initial server security hardening | 27 November 2026 |
 | Headless server configuration | 27 November 2026 |
+| DHCP reservation and network verification | 27 November 2026 |
 
 ## Technical Skills Developed
 
@@ -121,7 +122,7 @@ The current project focuses on deploying a self-hosted family media server using
 | Firmware Configuration | BIOS and UEFI configuration |
 | Bootloader Management | Manual EFI bootloader registration |
 | Computer Networking | Ethernet, IPv4 and IPv6 |
-| Network Configuration | Netplan, DHCP and routing |
+| Network Configuration | Netplan, DHCP reservations and routing |
 | Network Diagnostics | Connectivity and DNS testing |
 | Remote Administration | OpenSSH and Windows PowerShell |
 | Firewall Management | UFW configuration |
@@ -134,11 +135,11 @@ The current project focuses on deploying a self-hosted family media server using
 
 ## Current Milestone
 
-Successfully established a networked, headless Ubuntu Server with gigabit Ethernet connectivity, firewall protection and secure local SSH administration.
+Successfully established a networked, headless Ubuntu Server with gigabit Ethernet connectivity, firewall protection, secure local SSH administration and a verified DHCP reservation.
 
 ### Upcoming Tasks
 
-- [ ] Configure DHCP reservation.
+- [x] Configure DHCP reservation.
 - [ ] Review available firmware updates.
 - [ ] Install and configure Jellyfin.
 - [ ] Configure media storage and libraries.
