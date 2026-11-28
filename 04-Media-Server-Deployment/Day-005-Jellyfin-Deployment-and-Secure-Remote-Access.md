@@ -13,10 +13,16 @@ Deploy a self-hosted family media server, organise personal media, configure sta
 
 | Component | Specification |
 |---|---|
-| Server | Repurposed Acer laptop |
-| Operating System | Ubuntu Server 24.04 LTS |
-| Memory | 8 GB |
-| Storage | 512 GB SSD |
+| Laptop | Acer Aspire S5-371T |
+| Processor | Intel Core i7-6500U |
+| CPU Cores | 2 |
+| CPU Threads | 4 |
+| Memory | 8 GB RAM |
+| Storage | Samsung 512 GB SSD |
+| Operating System | Ubuntu Server 24.04.5 LTS |
+| External Optical Drive | ORIGBELIE BT524 |
+| Optical Drive Interface | USB-A (USB 3.0) |
+| Optical Drive Use | Audio CD reading and extraction |
 | Network | Gigabit Ethernet |
 | Media Software | Jellyfin |
 | Private Networking | Tailscale |
