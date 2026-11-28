@@ -126,6 +126,8 @@ The Acer laptop operates with its lid closed, using a wired Gigabit Ethernet con
 | Local and remote media streaming | 28 November 2026 |
 | Standard user access verification | 28 November 2026 |
 | FLAC audio import and metadata troubleshooting | 28 November 2026 |
+| Custom album artwork in Jellyfin | 28 November 2026 |
+| Desktop SSH administration over Tailscale | 28 November 2026 |
 
 ## Technical Skills Developed
 
@@ -151,7 +153,7 @@ The Acer laptop operates with its lid closed, using a wired Gigabit Ethernet con
 
 ## Current Milestone
 
-Successfully deployed a self-hosted family media server with verified local and private remote streaming, standard user access and headless operation. Two albums containing 31 FLAC tracks have been imported.
+Successfully deployed a self-hosted family media server with verified local and private remote streaming, standard user access and headless operation. Two albums containing 31 FLAC tracks have been imported and display custom cover artwork. Desktop SSH over Tailscale is verified; HP laptop public-key authorisation is pending.
 
 ### Upcoming Tasks
 
@@ -160,6 +162,8 @@ Successfully deployed a self-hosted family media server with verified local and 
 - [x] Install and configure Jellyfin.
 - [x] Configure media storage and libraries.
 - [x] Implement secure remote access using Tailscale.
+- [ ] Complete HP laptop SSH authentication.
+- [ ] Expand the music library and add artwork.
 - [ ] Verify service persistence and access policies.
 - [ ] Configure HTTPS.
 - [ ] Establish backup procedures.

@@ -3,7 +3,7 @@
 **Date:** 28 November 2026  
 **Project:** Home Lab Journey  
 **Phase:** Self-Hosted Media Server  
-**Status:** Completed
+**Status:** Completed (HP laptop SSH authorisation pending)
 
 ## 1. Objective
 
@@ -50,6 +50,9 @@ The ORIGBELIE BT524 external USB optical drive is used to import audio CDs into 
 - Tested lid-closed operation and monitored resource usage.
 - Established private remote access using Tailscale.
 - Verified streaming over mobile data in the browser and mobile application.
+- Added scanned front-cover artwork to both albums.
+- Installed Tailscale on the desktop and verified SSH over the private network.
+- Generated a separate ED25519 SSH key on the HP laptop.
 
 ## 4. Troubleshooting
 
@@ -93,6 +96,18 @@ The application initially retained the local server address when switching to mo
 
 Updated the application's server connection for private remote access and confirmed playback over 5G.
 
+### Issue 6: Tailscale CLI Not Recognised
+
+PowerShell did not recognise the Tailscale command immediately after installation.
+
+### Resolution
+
+Reopened PowerShell and confirmed all four devices appeared in the tailnet.
+
+### Issue 7: HP Laptop SSH Authentication
+
+The HP laptop reached the server through Tailscale, but SSH returned `Permission denied (publickey)`. The laptop generated its own ED25519 key pair. Server-side authorisation is pending because the existing administrative workstation was unavailable.
+
 ## 5. Verification and Results
 
 | Verification | Result |
@@ -110,6 +125,11 @@ Updated the application's server connection for private remote access and confir
 | Albums imported | 2 |
 | FLAC tracks imported | 31 |
 | Compilation metadata | Verified |
+| Custom album artwork | Both albums displayed correctly |
+| Tailscale devices registered | 4 |
+| Desktop Tailscale ping | Passed (2 ms) |
+| Desktop SSH over Tailscale | Passed |
+| HP laptop SSH authentication | Pending public-key authorisation |
 
 ### System Performance
 
@@ -165,6 +185,24 @@ The CPU package temperature measured 33°C during the test.
 
 Verified the Jellyfin sign-in page loaded over mobile data using Tailscale. The server address is obscured for privacy.
 
+#### Custom Album Artwork
+
+![Two albums with scanned cover artwork in Jellyfin](images/album-artwork.jpg)
+
+Scanned the original CD covers, converted the images to JPEG and uploaded them as primary album images in Jellyfin.
+
+#### Desktop Tailscale Troubleshooting
+
+![PowerShell Tailscale command not recognised](images/tailscale-cli-error.jpg)
+
+Reopening PowerShell resolved the command availability issue. A subsequent Tailscale ping returned a response in 2 ms, and an authenticated SSH session succeeded.
+
+#### HP Laptop Authentication
+
+![SSH public-key authentication error](images/hp-ssh-authentication-error.png)
+
+The separate laptop key has been generated. Authentication remains pending; password authentication was not enabled.
+
 ## 6. Commands Learned
 
 | Command | Purpose |
@@ -182,6 +220,10 @@ Verified the Jellyfin sign-in page loaded over mobile data using Tailscale. The 
 | `du` | Inspect storage usage |
 | `top` | Monitor resource usage |
 | `sensors` | Inspect hardware temperatures |
+| `tailscale status` | Inspect private network device status |
+| `tailscale ping media-server` | Verify private connectivity |
+| `ssh-keygen` | Generate a device-specific SSH key pair |
+| `exit` | Disconnect an SSH session without shutting down the server |
 
 ## 7. Challenges and Lessons Learned
 
@@ -192,12 +234,14 @@ Verified the Jellyfin sign-in page loaded over mobile data using Tailscale. The 
 - Review resource usage before restarting a service.
 - Test application permissions using separate user accounts.
 - Verify services across different client devices and networks.
+- Distinguish network connectivity from SSH authentication.
+- Keep SSH keys separate for each client device.
 
 This session involved AI-assisted guidance and independent practical troubleshooting. I executed commands, corrected metadata, configured services and verified results on physical hardware.
 
 ## 8. Outcome
 
-Successfully deployed a functioning family media server using repurposed hardware. Verified local and remote music playback, standard account access and headless operation. Imported 31 FLAC tracks and resolved compilation metadata issues.
+Successfully deployed a functioning family media server using repurposed hardware. Verified local and remote music playback, standard account access and headless operation. Imported 31 FLAC tracks, resolved compilation metadata issues, added album artwork and verified desktop SSH over Tailscale. HP laptop authentication remains pending.
 
 ## 9. Next Steps
 
@@ -207,6 +251,8 @@ Successfully deployed a functioning family media server using repurposed hardwar
 - [x] Verify local media playback.
 - [x] Test standard user accounts.
 - [x] Verify private remote streaming.
+- [ ] Authorise the HP laptop public key using existing administrative access and verify SSH.
+- [ ] Import additional CDs and add album covers.
 - [ ] Verify service persistence and restart recovery.
 - [ ] Review access policies.
 - [ ] Configure HTTPS.
