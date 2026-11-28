@@ -72,8 +72,8 @@ The current project focuses on deploying a self-hosted family media server using
 - [x] Phase 4: Local Remote Server Administration
 - [x] Phase 5: Initial Security Hardening
 - [x] Phase 6: Headless Server Configuration
-- [ ] Phase 7: Self-Hosted Media Server
-- [ ] Phase 8: Secure Remote Access with Tailscale
+- [x] Phase 7: Self-Hosted Media Server
+- [x] Phase 8: Secure Remote Access with Tailscale
 - [ ] Phase 9: Python Automation
 - [ ] Phase 10: Cloud Infrastructure
 
@@ -98,6 +98,12 @@ The current project focuses on deploying a self-hosted family media server using
 |---|---|---|
 | Day 4 | [Network Configuration and Server Hardening](03-Network-Configuration/Day-004-Network-Configuration-and-Server-Hardening.md) | Completed |
 
+### 04 - Media Server Deployment
+
+| Session | Documentation | Status |
+|---|---|---|
+| Day 5 | [Jellyfin Deployment and Secure Remote Access](04-Media-Server-Deployment/Day-005-Jellyfin-Deployment-and-Secure-Remote-Access.md) | Completed |
+
 ## Milestones Achieved
 
 | Milestone | Date Completed |
@@ -110,6 +116,10 @@ The current project focuses on deploying a self-hosted family media server using
 | Initial server security hardening | 27 November 2026 |
 | Headless server configuration | 27 November 2026 |
 | DHCP reservation and network verification | 27 November 2026 |
+| Jellyfin media server deployment | 28 November 2026 |
+| Local and remote media streaming | 28 November 2026 |
+| Standard user access verification | 28 November 2026 |
+| FLAC audio import and metadata troubleshooting | 28 November 2026 |
 
 ## Technical Skills Developed
 
@@ -135,16 +145,19 @@ The current project focuses on deploying a self-hosted family media server using
 
 ## Current Milestone
 
-Successfully established a networked, headless Ubuntu Server with gigabit Ethernet connectivity, firewall protection, secure local SSH administration and a verified DHCP reservation.
+Successfully deployed a self-hosted family media server with verified local and private remote streaming, standard user access and headless operation. Two albums containing 31 FLAC tracks have been imported.
 
 ### Upcoming Tasks
 
 - [x] Configure DHCP reservation.
-- [ ] Review available firmware updates.
-- [ ] Install and configure Jellyfin.
-- [ ] Configure media storage and libraries.
-- [ ] Implement secure remote access using Tailscale.
+- [x] Review available firmware updates.
+- [x] Install and configure Jellyfin.
+- [x] Configure media storage and libraries.
+- [x] Implement secure remote access using Tailscale.
+- [ ] Verify service persistence and access policies.
+- [ ] Configure HTTPS.
 - [ ] Establish backup procedures.
+- [ ] Add setup photographs.
 
 ## Learning Approach
 
