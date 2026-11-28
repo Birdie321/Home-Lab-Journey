@@ -131,6 +131,40 @@ CPU package temperature measured 33°C during the lid-closed test. These measure
 
 Network addresses, account identifiers, credentials and detailed access policies are excluded from this public documentation.
 
+### Screenshots and Verification
+
+#### Audio CD Import
+
+![CD extraction, encoding and tagging completed](images/cd-ripping-completed.png)
+
+The final track of the first CD completed extraction, encoding and tagging successfully.
+
+![Sixteen FLAC track filenames](images/flac-track-files.png)
+
+Verified the sixteen FLAC files created during the first album import.
+
+#### Jellyfin Library
+
+![First album indexed in Jellyfin](images/jellyfin-music-library.png)
+
+Confirmed the first album appeared following a library scan.
+
+#### Headless Server Monitoring
+
+![CPU and memory usage during lid-closed operation](images/lid-closed-resource-usage.png)
+
+The server remained responsive with 99.7% CPU idle during the lid-closed test.
+
+![Hardware temperature readings](images/cpu-temperature.png)
+
+The CPU package temperature measured 33°C during the test.
+
+#### Private Remote Access
+
+<img src="images/remote-access-over-5g.png" alt="Jellyfin sign-in page loaded over 5G" width="300">
+
+Verified the Jellyfin sign-in page loaded over mobile data using Tailscale. The server address is obscured for privacy.
+
 ## 6. Commands Learned
 
 | Command | Purpose |
