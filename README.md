@@ -8,6 +8,12 @@ My goal is to develop practical technical skills in preparation for a Bachelor o
 
 The current project focuses on deploying a self-hosted family media server using repurposed hardware, Linux, secure networking and remote administration.
 
+## Current Server Setup
+
+![Physical Acer media server on a laptop stand with Ethernet adapter and external optical drive](04-Media-Server-Deployment/images/server-setup.jpg)
+
+The Acer laptop operates with its lid closed, using a wired Gigabit Ethernet connection and an external USB optical drive for CD imports.
+
 ## Learning Objectives
 
 - Linux administration
@@ -157,7 +163,7 @@ Successfully deployed a self-hosted family media server with verified local and 
 - [ ] Verify service persistence and access policies.
 - [ ] Configure HTTPS.
 - [ ] Establish backup procedures.
-- [ ] Add setup photographs.
+- [x] Add setup photographs.
 
 ## Learning Approach
 

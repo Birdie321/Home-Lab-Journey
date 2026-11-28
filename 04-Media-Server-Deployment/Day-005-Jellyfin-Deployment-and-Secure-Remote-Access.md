@@ -29,6 +29,12 @@ Deploy a self-hosted family media server, organise personal media, configure sta
 | Audio Format | FLAC |
 | Clients | Windows and iOS |
 
+### Physical Setup
+
+![ORIGBELIE external optical drive and Acer media server](images/optical-drive.jpg)
+
+The ORIGBELIE BT524 external USB optical drive is used to import audio CDs into the FLAC music library.
+
 ## 3. Tasks Performed
 
 - Verified server connectivity and system health.
@@ -171,5 +177,5 @@ Successfully deployed a functioning family media server using repurposed hardwar
 - [ ] Review access policies.
 - [ ] Configure HTTPS.
 - [ ] Establish backups.
-- [ ] Add privacy-reviewed setup photographs.
+- [x] Add privacy-reviewed setup photographs.
 - [ ] Develop Python maintenance automation.
